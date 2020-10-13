@@ -40,6 +40,11 @@ def starts_with_consonant(s):
 # Note: Be sure it returns false if the string is not a valid binary number!
 # Hint: Use regular expressions to match for the pattern of a binary number that is a multiple of 4.
 def binary_multiple_of_4(s):
-
-
-  return
+    pattern =  "^(0|(10|111*0)(10|111*0)*0)*$"
+    empty = "^$"
+    if re.search(empty, s):
+        return False
+    if re.search(pattern, s):
+        return True
+    else:
+        return False
