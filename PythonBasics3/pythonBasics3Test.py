@@ -17,7 +17,7 @@ def test(got, expected):
 def main():
     # set which functions to test
     starts_with_number = True
-    starts_with_consonant = False
+    starts_with_consonant = True
     binary_multiple_of_4 = False
 
     if starts_with_number:
@@ -41,7 +41,7 @@ def main():
         test(pythonBasics3.starts_with_consonant('cast'), True)
         test(pythonBasics3.starts_with_consonant('cast'), True)
         test(pythonBasics3.starts_with_consonant('cast'), True)
-        test(pythonBasics3.starts_with_consonant('#3'), False)
+        test(pythonBasics3.starts_with_consonant('#b3'), False)
         test(pythonBasics3.starts_with_consonant('east'), False)
         test(pythonBasics3.starts_with_consonant('Eat'), False)
         test(pythonBasics3.starts_with_consonant('Ice'), False)

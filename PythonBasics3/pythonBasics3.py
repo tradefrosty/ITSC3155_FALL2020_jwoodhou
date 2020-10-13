@@ -26,8 +26,11 @@ def starts_with_number(s):
 # (For our purposes, a consonant is any letter other than A, E, I, O, U.)
 # Note: Be sure to use RegEx and it works for both upper and lower case and for nonletters!
 def starts_with_consonant(s):
-  pattern =  "^(A|E|I|O|U)"
-  return False
+  pattern =  "^[bcdfghjklmnpqrstvwxyz]"
+  if re.search(pattern, s):
+      return True
+  else:
+      return False
 
 
 
