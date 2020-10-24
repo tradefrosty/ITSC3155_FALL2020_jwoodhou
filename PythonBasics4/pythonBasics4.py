@@ -6,10 +6,13 @@
 
 # # Part A.
 def array_2_dict(emails, contacts):
-    # YOUR CODE HERE
-
-    return
-
+    d = {}
+    if not emails:
+        for x in contacts:
+            d[x] = ""
+        return d
+    d = dict(zip(contacts,emails))
+    return d
 # # Part B.
 def array2d_2_dict(contact_info, contacts):
     # YOUR CODE HERE
@@ -21,4 +24,3 @@ def dict_2_array(contacts):
     # YOUR CODE HERE
 
     return
-
