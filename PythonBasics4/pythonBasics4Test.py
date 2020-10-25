@@ -18,8 +18,8 @@ def test(got, expected):
 # Calls the functions in pythonBasics3 with interesting inputs.
 def main():
     # set which functions to test
-    array_2_dict = True
-    array2d_2_dict = True
+    array_2_dict = False
+    array2d_2_dict = False
     dict_2_array = True
 
     if array_2_dict:
@@ -47,9 +47,6 @@ def main():
         contact_dict = {"Bob Smith": "", "Sally Field": "", "Foo Fighter": ""}
         test(pythonBasics4.array2d_2_dict(info_array, contact_dict), contact_dict)
 
-        info_array = [[]]
-        contact_dict = {"Bob Smith": "", "Sally Field": "", "Foo Fighter": ""}
-        test(pythonBasics4.array2d_2_dict(info_array, contact_dict), contact_dict)
 
         info_array = [["bobsmith@example.com", "555-555-5555"], ["sallyfield@example.com", "111-111-1111"]]
         contact_dict = {"Bob Smith": "", "Sally Field": ""}
@@ -65,6 +62,9 @@ def main():
               "Sally Field": {"email": "sallyfield@example.com", "phone": "111-111-1111"},
               "Foo Fighter": {"email": "foofighter@example.com", "phone": "777-777-7777"}})
 
+        info_array = [[]]
+        contact_dict = {"Bob Smith": "", "Sally Field": "", "Foo Fighter": ""}
+        test(pythonBasics4.array2d_2_dict(info_array, contact_dict), contact_dict)
     if dict_2_array:
         print()
         print('dict_2_array')
