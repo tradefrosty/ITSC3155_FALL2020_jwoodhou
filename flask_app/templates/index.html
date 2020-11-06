@@ -9,7 +9,10 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     </head>
     <body>
-
+        <nav> 
+            <a href = "{{ url_for('index') }}"> Home </a> ||
+            <a href="/notes"> My notes </a>
+         </nav>
         <h1>Welcome {{user.name}} to the 49er Notes App!</h1>
 
         <h2>Use this site to maintain and organize your notes.</h2>
@@ -19,6 +22,6 @@
         <h3>To Do</h3>
 
         <h3>Work notes</h3>
-
+        
     </body>
 </html>
