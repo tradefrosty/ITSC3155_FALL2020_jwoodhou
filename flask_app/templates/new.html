@@ -13,7 +13,9 @@
            <!--  add navigation links -->
 
        </nav>
-
+       <a href = "{{ url_for('index') }}"> Home </a> ||
+        <a href="/notes"> My notes </a> ||
+        <a href = "{{ url_for('new_note') }}"> Add Note </a>
         <h1>Welcome {{user.name}} to the 49er Notes App!</h1>
         <form action="new" method="post">
            <p><label>Title </label></p><p>  <input type="text" name="title"/></p>
