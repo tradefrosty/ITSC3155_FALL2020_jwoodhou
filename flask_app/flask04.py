@@ -2,6 +2,8 @@ import os                 # os is used to get environment variables IP & PORT
 from flask import Flask, render_template, request
 from flask import redirect, url_for   # Flask is the web app that we will customize
 from database import db
+from models import Note as Note
+from models import User as User
 
 
 
@@ -30,21 +32,21 @@ notes = {1: {'title': 'First note', 'text': 'This is my first note', 'date': '10
 # get called. What it returns is what is shown as the web page
 @app.route('/index')
 def index():
-    a_user = db.session.query(User).filter_by(email='jwoodou@uncc.edu')
+    a_user = db.session.query(User).filter_by(email='jwoodhou@uncc.edu').one()
     
     return render_template("index.html", user = a_user)
 
 @app.route('/notes')
 def get_notes():
-    a_user = db.session.query(User).filter_by(email='jwoodou@uncc.edu')
+    a_user = db.session.query(User).filter_by(email='jwoodhou@uncc.edu').one()
     my_notes = db.session.query(Note).all()
 
     return render_template('notes.html', notes = my_notes, user = a_user)
 
 @app.route('/notes/<note_id>')
 def get_note(note_id):
-    a_user = db.session.query(User).filter_by(email='jwoodou@uncc.edu')
-    my_note = db.session.query(Note).filter_by(id=note_id)
+    a_user = db.session.query(User).filter_by(email='jwoodhou@uncc.edu').one()
+    my_note = db.session.query(Note).filter_by(id=note_id).one()
 
    
     
@@ -65,9 +67,9 @@ def new_note():
         db.session.add(newEntry)
         db.session.commit()
         return redirect(url_for('get_notes',name = a_user))
-        
+
     else:
-        a_user = db.session.query(User).filter_by(email='jwoodou@uncc.edu')
+        a_user = db.session.query(User).filter_by(email='jwoodhou@uncc.edu').one()
         return render_template('new.html', user=a_user) 
 
 
